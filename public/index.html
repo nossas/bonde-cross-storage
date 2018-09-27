@@ -1,0 +1,40 @@
+<!doctype html>
+<head>
+  <title>Bonde Cross Storage HUB</title>
+</head>
+<body>
+  <script type="text/javascript" src="./lib/hub.js"></script>
+  <script>
+    // Limit requests to any client running on .localhost:300x
+    CrossStorageHub.init([
+        // Development
+        {
+          origin: /.*admin-canary.bonde.devel:\d{4}$/,
+          allow: ['get', 'set', 'del']
+        },
+        {
+          origin: /.*app.bonde.devel:\d{4}$/,
+          allow: ['get']
+        },
+        // Staging
+        {
+          origin: /.*admin-canary.staging.bonde.org$/,
+          allow: ['get', 'set', 'del']
+        },
+        {
+          origin: /.*app.staging.bonde.org$/,
+          allow: ['get']
+        },
+        // Production
+        {
+          origin: /.*admin-canary.bonde.org$/,
+          allow: ['get', 'set', 'del']
+        },
+        {
+          origin: /.*app.bonde.org$/,
+          allow: ['get']
+        }
+    ]);
+  </script>
+</body>
+</html>
