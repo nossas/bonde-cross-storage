@@ -16,6 +16,14 @@
           origin: /.*app.bonde.devel:\d{4}$/,
           allow: ['get']
         },
+        {
+          origin: /.*admin-canary.staging.bonde.org:\d{4}$/,
+          allow: ['get', 'set', 'del']
+        },
+        {
+          origin: /.*app.staging.bonde.org:\d{4}$/,
+          allow: ['get']
+        },
         // Staging
         {
           origin: /.*admin-canary.staging.bonde.org$/,
