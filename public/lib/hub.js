@@ -140,10 +140,16 @@
         continue;
       }
 
+      // console.log('--- LOG ---');
+      // console.log('entry', entry);
+      // console.log(`[${method}]${origin}`); 
       match = entry.origin.test(origin);
+      // console.log('regex is ', match);
       if (match && CrossStorageHub._inArray(method, entry.allow)) {
+        // console.log('--- LOG EXIT 1 ---');
         return true;
       }
+      // console.log('--- LOG EXIT 0 ---');
     }
 
     return false;
