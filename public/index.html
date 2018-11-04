@@ -14,7 +14,7 @@
         },
         {
           origin: /.*app.bonde.devel:\d{4}$/,
-          allow: ['get']
+          allow: ['get', 'set', 'del']
         },
         // Staging
         {
@@ -23,7 +23,7 @@
         },
         {
           origin: /.*app.staging.bonde.org$/,
-          allow: ['get']
+          allow: ['get', 'set', 'del']
         },
         // Production
         {
@@ -32,7 +32,7 @@
         },
         {
           origin: /.*app.bonde.org$/,
-          allow: ['get']
+          allow: ['get', 'set', 'del']
         }
     ]);
   </script>
