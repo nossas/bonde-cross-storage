@@ -16,6 +16,10 @@
           origin: /.*app.bonde.devel:\d{4}$/,
           allow: ['get', 'set', 'del']
         },
+        {
+          origin: /.*solidarity.bonde.devel:\d{4}$/,
+          allow: ['get', 'set', 'del']
+        },
         // Staging
         {
           origin: /.*admin-canary.staging.bonde.org$/,
@@ -25,6 +29,10 @@
           origin: /.*app.staging.bonde.org$/,
           allow: ['get', 'set', 'del']
         },
+        {
+          origin: /.*solidarity.staging.bonde.org$/,
+          allow: ['get', 'set', 'del']
+        },
         // Production
         {
           origin: /.*admin-canary.bonde.org$/,
@@ -32,6 +40,10 @@
         },
         {
           origin: /.*app.bonde.org$/,
+          allow: ['get', 'set', 'del']
+        },
+        {
+          origin: /.*solidarity.bonde.org$/,
           allow: ['get', 'set', 'del']
         }
     ]);
