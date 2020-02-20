@@ -10,6 +10,19 @@ pipeline:
       status: success
       branch: [hotfix/*, release/*, feature/*, develop]
 
+  deploy-staging:
+    image: peloton/drone-rancher
+    url: http://cluster.bonde.org
+    service: webservers/cross-storage 
+    group: deploying
+    docker_image: nossas/bonde-cross-storage:${DRONE_BRANCH/\//-}
+    timeout: 360
+    confirm: true
+    secrets: [ rancher_access_key, rancher_secret_key ]
+    when:
+      status: success
+      branch: [hotfix/*, feature/*, develop]
+
   publish-production:
     image: plugins/docker
     repo: nossas/bonde-cross-storage
@@ -17,6 +30,22 @@ pipeline:
     secrets: [ docker_username, docker_password ]
     tags:
       - ${DRONE_TAG##v}
+    when:
+      status: success
+      event: tag
+
+  deploy-production:
+    image: peloton/drone-rancher
+    url: http://cluster.bonde.org
+    service: webservers/cross-storage
+    docker_image: "nossas/bonde-cross-storage:${DRONE_TAG##v}"
+    timeout: 360
+    confirm: true
+    secrets:
+      - source: rancher_access_key_prod
+        target: rancher_access_key
+      - source: rancher_secret_key_prod
+        target: rancher_secret_key
     when:
       status: success
       event: tag
