@@ -9,43 +9,19 @@
     CrossStorageHub.init([
         // Development
         {
-          origin: /.*admin-canary.bonde.devel:\d{4}$/,
-          allow: ['get', 'set', 'del']
-        },
-        {
-          origin: /.*app.bonde.devel:\d{4}$/,
-          allow: ['get', 'set', 'del']
-        },
-        {
-          origin: /.*solidarity.bonde.devel:\d{4}$/,
+          origin: /.*bonde.devel:\d{4}$/,
           allow: ['get', 'set', 'del']
         },
         // Staging
         {
-          origin: /.*admin-canary.staging.bonde.org$/,
-          allow: ['get', 'set', 'del']
-        },
-        {
-          origin: /.*app.staging.bonde.org$/,
-          allow: ['get', 'set', 'del']
-        },
-        {
-          origin: /.*solidarity.staging.bonde.org$/,
+          origin: /.*staging.bonde.org$/,
           allow: ['get', 'set', 'del']
         },
         // Production
         {
-          origin: /.*admin-canary.bonde.org$/,
+          origin: /.*bonde.org$/,
           allow: ['get', 'set', 'del']
         },
-        {
-          origin: /.*app.bonde.org$/,
-          allow: ['get', 'set', 'del']
-        },
-        {
-          origin: /.*solidarity.bonde.org$/,
-          allow: ['get', 'set', 'del']
-        }
     ]);
   </script>
 </body>
