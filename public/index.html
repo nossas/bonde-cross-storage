@@ -30,11 +30,11 @@
       CrossStorageHub.init([
           // Development
           {
-            origin: /.*localhost:\d{4}$/,
+            origin: /.*bonde.devel:\d{4}$/,
             allow: ['get', 'set', 'del']
           },
           {
-            origin: /.*bonde.devel:\d{4}$/,
+            origin: /.*bonde.devel$/,
             allow: ['get', 'set', 'del']
           },
           // Staging
